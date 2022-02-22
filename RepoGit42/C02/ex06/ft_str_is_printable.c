@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asantoro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 17:40:20 by asantoro          #+#    #+#             */
-/*   Updated: 2022/02/10 20:06:25 by asantoro         ###   ########.fr       */
+/*   Created: 2022/02/12 11:35:11 by asantoro          #+#    #+#             */
+/*   Updated: 2022/02/14 17:37:06 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-
-
-
-
-
-
-int main (void)
+int	ft_str_is_printable(char *str)
 {
-	char src[] = "ciao";
-	char dest[5];
-	ft_strcpy(dest, src);
-	printf("Stringa da copiare > %s\nStringa copiata > %s\n", src, dest);
+	int	controllo;
+
+	controllo = 1;
+	while (*str)
+	{
+		if (!(*str >= ' ' && *str <= '~'))
+		{
+			controllo = 0;
+		}
+	str++;
+	}
+	return (controllo);
 }

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asantoro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 17:40:20 by asantoro          #+#    #+#             */
-/*   Updated: 2022/02/10 20:06:25 by asantoro         ###   ########.fr       */
+/*   Created: 2022/02/14 10:39:53 by asantoro          #+#    #+#             */
+/*   Updated: 2022/02/14 20:35:36 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-
-
-
-
-
-
-int main (void)
+char	*ft_strlowcase(char *str)
 {
-	char src[] = "ciao";
-	char dest[5];
-	ft_strcpy(dest, src);
-	printf("Stringa da copiare > %s\nStringa copiata > %s\n", src, dest);
+	int	count;
+
+	count = 0;
+	while (str[count] != '\0')
+	{
+		if (str[count] >= 'A' && str[count] <= 'Z')
+		{
+			str[count] += 32;
+		}	
+		count++;
+	}
+	return (str);
 }

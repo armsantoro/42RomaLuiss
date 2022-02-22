@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asantoro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 17:40:20 by asantoro          #+#    #+#             */
-/*   Updated: 2022/02/10 20:06:25 by asantoro         ###   ########.fr       */
+/*   Created: 2022/02/19 12:45:22 by asantoro          #+#    #+#             */
+/*   Updated: 2022/02/19 12:56:32 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-
-
-
-
-
-
-int main (void)
+void	ft_putchar(char a)
 {
-	char src[] = "ciao";
-	char dest[5];
-	ft_strcpy(dest, src);
-	printf("Stringa da copiare > %s\nStringa copiata > %s\n", src, dest);
+	write(1, &a, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}		
 }

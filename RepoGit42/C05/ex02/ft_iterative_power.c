@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asantoro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 17:40:20 by asantoro          #+#    #+#             */
-/*   Updated: 2022/02/10 20:06:25 by asantoro         ###   ########.fr       */
+/*   Created: 2022/02/21 19:22:37 by asantoro          #+#    #+#             */
+/*   Updated: 2022/02/21 21:01:24 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-
-
-
-
-
-
-int main (void)
+int	ft_iterative_power(int nb, int power)
 {
-	char src[] = "ciao";
-	char dest[5];
-	ft_strcpy(dest, src);
-	printf("Stringa da copiare > %s\nStringa copiata > %s\n", src, dest);
+	int	result;
+
+	if (power == 0)
+		return (1);
+	if (power < 0)
+		return (0);
+	result = nb;
+	while (power > 1)
+	{
+		result *= nb;
+		power--;
+	}
+	return (result);
 }

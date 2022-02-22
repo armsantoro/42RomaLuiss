@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asantoro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 17:40:20 by asantoro          #+#    #+#             */
-/*   Updated: 2022/02/10 20:06:25 by asantoro         ###   ########.fr       */
+/*   Created: 2022/02/16 10:25:50 by asantoro          #+#    #+#             */
+/*   Updated: 2022/02/18 19:00:51 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-
-
-
-
-
-
-int main (void)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	char src[] = "ciao";
-	char dest[5];
-	ft_strcpy(dest, src);
-	printf("Stringa da copiare > %s\nStringa copiata > %s\n", src, dest);
+	unsigned int	count;
+
+	count = 0;
+	while ((s1[count] != '\0' || s2[count] != '\0') && count < n)
+	{
+		if (s1[count] != s2[count])
+		{
+			return ((unsigned char) s1[count] - (unsigned char) s2[count]);
+		}
+		count++;
+	}
+	return (0);
 }

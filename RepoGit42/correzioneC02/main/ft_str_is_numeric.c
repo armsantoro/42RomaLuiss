@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asantoro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 17:40:20 by asantoro          #+#    #+#             */
-/*   Updated: 2022/02/10 20:06:25 by asantoro         ###   ########.fr       */
+/*   Created: 2022/02/11 20:02:31 by asantoro          #+#    #+#             */
+/*   Updated: 2022/02/11 20:23:16 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-
-
-
-
-
-
-int main (void)
+int	ft_str_is_numeric(char *str)
 {
-	char src[] = "ciao";
-	char dest[5];
-	ft_strcpy(dest, src);
-	printf("Stringa da copiare > %s\nStringa copiata > %s\n", src, dest);
+	while(*str)
+	{
+		if(!((*str >= '1' && *str <= '9')))
+		{
+			return(0);
+		}
+		str++;
+	}
+	return(1);
 }
+
+int main(void)
+{
+	ft_str_is_numeric("123f13");
+	ft_str_is_numeric("124812659");
+	printf("%d\n", ft_str_is_numeric("123f13"));
+	printf("%d\n", ft_str_is_numeric("124812659"));
+	return (0);
+}
+

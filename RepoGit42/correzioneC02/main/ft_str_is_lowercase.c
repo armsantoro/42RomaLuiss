@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asantoro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 17:40:20 by asantoro          #+#    #+#             */
-/*   Updated: 2022/02/10 20:06:25 by asantoro         ###   ########.fr       */
+/*   Created: 2022/02/12 10:41:41 by asantoro          #+#    #+#             */
+/*   Updated: 2022/02/12 10:58:29 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+# include <stdio.h>
 
-
-
-
-
-
+int	ft_str_is_lowercase(char *str)
+{
+	while (*str)
+	{
+		if (!(*str >= 'a' && *str <= 'z'))
+		{
+			return (0);
+		}
+		str++;
+	}
+	return (1);
+}
 
 int main (void)
 {
-	char src[] = "ciao";
-	char dest[5];
-	ft_strcpy(dest, src);
-	printf("Stringa da copiare > %s\nStringa copiata > %s\n", src, dest);
+	char a[] = "asdf";
+	char b[] = "asD1";
+	ft_str_is_lowercase(a);
+	ft_str_is_lowercase(b);
+	printf("%d\n", ft_str_is_lowercase("asdf"));
+	printf("%d\n", ft_str_is_lowercase("asD1"));
+	return (0);
 }
