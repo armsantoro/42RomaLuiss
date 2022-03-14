@@ -6,11 +6,13 @@
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:06:11 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/09 17:10:02 by asantoro         ###   ########.fr       */
+/*   Updated: 2022/03/14 11:07:44 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, void *src, unsigned int n)
+#include <stdlib.h>
+
+void	*ft_memcpy(void *dst, void *src, size_t n)
 {
 	unsigned char	*p_dst;
 	unsigned char	*p_src;
@@ -24,3 +26,6 @@ void	*ft_memcpy(void *dst, void *src, unsigned int n)
 	}
 	return (dst);
 }
+
+#include <stdio.h>
+int main()

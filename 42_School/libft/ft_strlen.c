@@ -6,11 +6,11 @@
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:12:59 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/09 16:12:27 by asantoro         ###   ########.fr       */
+/*   Updated: 2022/03/11 12:14:19 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	count;
 

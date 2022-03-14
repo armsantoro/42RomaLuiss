@@ -6,11 +6,11 @@
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:54:28 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/09 14:55:29 by asantoro         ###   ########.fr       */
+/*   Updated: 2022/03/10 12:00:58 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *str, int c, unsigned int n);
+#include "libft.h"
 
 void	ft_bzero(void *str, unsigned int n)
 {

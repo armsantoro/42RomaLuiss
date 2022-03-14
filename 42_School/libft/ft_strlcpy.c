@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 15:32:33 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/10 14:17:51 by asantoro         ###   ########.fr       */
+/*   Created: 2022/03/10 14:18:57 by asantoro          #+#    #+#             */
+/*   Updated: 2022/03/10 15:48:02 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t				i;
-	unsigned char		*psrc;
-	unsigned char		*pdst;
+	size_t	srcsize;
+	size_t	i;
 
-	psrc = src;
-	pdst = dst;
-	if (pdst < psrc)
+	if (!dst || !src)
+		return (0);
+	srcsize = ft_strlen((char *)src);
+	i = 0;
+	if (dstsize != 0)
 	{
-		i = 0;
-		while (i < n)
+		while (src[i] != '\0' && i < (dstsize - 1))
 		{
-			pdst[i] = psrc[i];
+			dst[i] = src[i];
 			i++;
 		}
+		dst[i] = '\0';
 	}
-	else if (pdst > psrc)
-	{
-		i = n;
-		while (i > 0)
-		{
-			pdst[i - 1] = psrc[i - 1];
-			i--;
-		}
-	}
-	return (dst);
+	return (srcsize);
 }
