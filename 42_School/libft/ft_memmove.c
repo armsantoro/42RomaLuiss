@@ -6,7 +6,7 @@
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:32:33 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/10 14:17:51 by asantoro         ###   ########.fr       */
+/*   Updated: 2022/03/16 11:14:07 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	unsigned char		*psrc;
 	unsigned char		*pdst;
 
-	psrc = src;
-	pdst = dst;
+	psrc = (unsigned char *)src;
+	pdst = (unsigned char *) dst;
 	if (pdst < psrc)
 	{
 		i = 0;

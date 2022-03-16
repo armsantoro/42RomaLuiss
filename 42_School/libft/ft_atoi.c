@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 16:08:28 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/15 15:22:26 by asantoro         ###   ########.fr       */
+/*   Created: 2022/03/16 10:15:26 by asantoro          #+#    #+#             */
+/*   Updated: 2022/03/16 10:52:35 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+int	ft_atoi(const char *str)
 {
-	size_t	lendest;
-	size_t	i;
+	int	conv;
+	int	sign;
 
-	if ((int)dstsize <= ft_strlen(dst))
-		return (dstsize + ft_strlen((char *)src));
-	lendest = ft_strlen(dst);
-	i = 0;
-	while (src[i] != '\0' && lendest + 1 < dstsize)
+	conv = 0;
+	sign = 1;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		dst[lendest] = src[i];
-		i++;
-		lendest++;
+		if (*str == '-')
+			sign *= -1;
+		str++;
 	}
-	dst[lendest] = '\0';
-	return (ft_strlen((char *)dst) + ft_strlen((char *)&src[i]));
+	while (*str >= '0' && *str <= '9')
+	{
+		conv = ((*str - 48) + (conv * 10));
+		str++;
+	}
+	return (conv * sign);
 }

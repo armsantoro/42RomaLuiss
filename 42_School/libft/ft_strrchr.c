@@ -6,7 +6,7 @@
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:03:10 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/14 16:16:17 by asantoro         ###   ########.fr       */
+/*   Updated: 2022/03/16 11:58:03 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ char	*ft_strrchr(const char *s, int c)
 	int	slen;
 
 	slen = ft_strlen((char *)s);
-	while (s[slen] >= 0)
+	while (slen >= 0)
 	{
-		if (c == s[slen])
-			return ((char *)&s[slen]);
-		else
+		if (s[slen] == (unsigned char)c)
+			return ((char *)s + slen);
 		slen--;
 	}
 	return (NULL);

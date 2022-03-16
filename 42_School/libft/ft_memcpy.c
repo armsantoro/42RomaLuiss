@@ -6,7 +6,7 @@
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:06:11 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/14 11:07:44 by asantoro         ###   ########.fr       */
+/*   Updated: 2022/03/15 12:18:41 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,3 @@ void	*ft_memcpy(void *dst, void *src, size_t n)
 	}
 	return (dst);
 }
-
-#include <stdio.h>
-int main()
