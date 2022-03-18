@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spyro <spyro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 17:56:48 by spyro             #+#    #+#             */
-/*   Updated: 2022/03/18 11:43:22 by spyro            ###   ########.fr       */
+/*   Created: 2022/03/18 18:09:28 by asantoro          #+#    #+#             */
+/*   Updated: 2022/03/18 18:48:55 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ int	is_match(char set, char const *str)
 	return (0);
 }
 
-char	trim_char(char set, char *str)
+char	trim_char(char *set, char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
+		while (set)
 		if (str[i] == set)
 			str[i] = 127;
 		i++;
@@ -47,9 +48,9 @@ char	*ft_strtrim(const char *s1, char *set)
 	if (!s1 || !set)
 		return (NULL);
 	i = 0;
-	while (s1[i] && is_match(set, s1[i]))
+	while (s1[i] && is_match(s1[i], set))
 	{
-		trim_char((char) set, (char *)s1[i]);
+		trim_char((char)s1[i], (char *)set);
 		i++;
 	}
 	size_s_trim = ft_strlen((char *)s1);
@@ -60,7 +61,9 @@ char	*ft_strtrim(const char *s1, char *set)
 
 int	main()
 {
-	char a[] = "mamma";
-	char b[] = "a";
-	printf("%s\n", ft_strtrim(a, b));
+	char a[] = "armando";
+	char b[] = "ar";
+	//printf("%s\n", ft_strtrim(a, b));
+	printf("%s\n", strtrim(a, b));
+
 }
