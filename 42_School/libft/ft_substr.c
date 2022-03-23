@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spyro <spyro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 13:23:04 by spyro             #+#    #+#             */
-/*   Updated: 2022/03/17 16:35:09 by spyro            ###   ########.fr       */
+/*   Created: 2022/03/22 11:35:57 by asantoro          #+#    #+#             */
+/*   Updated: 2022/03/23 15:51:59 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,21 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*dest;
 	size_t	sizes;
 	int		i;
+	size_t	j;
 
+	i = start;
+	j = 0;
+	if (!s)
+		return (0);
 	sizes = ft_strlen((char *)s);
-	if (start >= sizes)
-		return (ft_strdup(""));
-	dest = malloc(len + 1);
-	i = 0;
-	while (i < (int)len && s[start + i] != '\0')
-	{
-		dest[i] = s[start + i];
-		i++;
-	}
-	dest[start + i] = '\0';
+	if (start > sizes)
+		dest = (char *)malloc(ft_strlen((char *)s));
+	else
+		dest = (char *)malloc(len + 1);
+	if (!s || !dest)
+		return (0);
+	while (i < ft_strlen((char *)s) && j < len)
+		dest[j++] = s[i++];
+	dest[j] = '\0';
 	return (dest);
 }

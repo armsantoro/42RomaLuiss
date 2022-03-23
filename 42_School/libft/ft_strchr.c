@@ -6,7 +6,7 @@
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 12:36:48 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/16 15:27:26 by asantoro         ###   ########.fr       */
+/*   Updated: 2022/03/21 17:51:51 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strchr(const char *s, int c)
 		if (c == s[i])
 			return ((char *)&s[i]);
 		else
-		i++;
+			i++;
 	}
 	if (c == s[i])
 		return ((char *)&s[i]);
