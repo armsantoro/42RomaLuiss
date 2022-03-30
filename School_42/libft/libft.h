@@ -6,7 +6,15 @@
 /*   By: spyro <spyro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:25:45 by asantoro          #+#    #+#             */
+<<<<<<< HEAD
+<<<<<<<< HEAD:School_42/libft/libft.h
+/*   Updated: 2022/03/30 18:56:02 by spyro            ###   ########.fr       */
+========
+/*   Updated: 2022/03/17 11:28:26 by spyro            ###   ########.fr       */
+>>>>>>>> 3ecadc915b1ca7305f35fe81b89ba37deefbf876:42_School/libft/libft.h
+=======
 /*   Updated: 2022/03/28 19:25:02 by spyro            ###   ########.fr       */
+>>>>>>> 3ecadc915b1ca7305f35fe81b89ba37deefbf876
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +46,19 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s);
+<<<<<<< HEAD
+<<<<<<<< HEAD:School_42/libft/libft.h
+=======
+>>>>>>> 3ecadc915b1ca7305f35fe81b89ba37deefbf876
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(const char *s1, char *set);
 char	**ft_split(char *string, const char delimiter);
+<<<<<<< HEAD
+char	*ft_itoa(int nb);
+========
+>>>>>>>> 3ecadc915b1ca7305f35fe81b89ba37deefbf876:42_School/libft/libft.h
+=======
+>>>>>>> 3ecadc915b1ca7305f35fe81b89ba37deefbf876
 
 #endif
