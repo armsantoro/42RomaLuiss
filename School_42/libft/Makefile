@@ -6,15 +6,7 @@
 #    By: spyro <spyro@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 10:58:23 by asantoro          #+#    #+#              #
-<<<<<<< HEAD
-<<<<<<<< HEAD:School_42/libft/Makefile
-#    Updated: 2022/03/30 18:56:20 by spyro            ###   ########.fr        #
-========
-#    Updated: 2022/03/17 11:28:47 by spyro            ###   ########.fr        #
->>>>>>>> 3ecadc915b1ca7305f35fe81b89ba37deefbf876:42_School/libft/Makefile
-=======
-#    Updated: 2022/03/28 19:48:00 by spyro            ###   ########.fr        #
->>>>>>> 3ecadc915b1ca7305f35fe81b89ba37deefbf876
+#    Updated: 2022/03/31 19:27:40 by spyro            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,17 +18,9 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_strchr.c ft_tolower.c \
 	ft_bzero.c ft_memcmp.c ft_strlen.c ft_isalnum.c \
 	ft_memcpy.c ft_strncmp.c ft_isalpha.c ft_memmove.c \
 	ft_strnstr.c ft_isascii.c ft_memset.c ft_strrchr.c \
-<<<<<<< HEAD
-<<<<<<<< HEAD:School_42/libft/Makefile
 	ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
-	ft_strtrim.c ft_split.c ft_itoa.c
-========
-	ft_calloc.c ft_strdup.c
->>>>>>>> 3ecadc915b1ca7305f35fe81b89ba37deefbf876:42_School/libft/Makefile
-=======
-	ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
-	ft_strtrim.c ft_split.c
->>>>>>> 3ecadc915b1ca7305f35fe81b89ba37deefbf876
+	ft_strtrim.c ft_split.c ft_strmapi.c ft_striteri.c \
+	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 
 OBJS = $(SRCS:.c=.o)
 

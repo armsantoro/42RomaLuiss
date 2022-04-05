@@ -6,7 +6,7 @@
 /*   By: spyro <spyro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 15:51:06 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/29 03:20:31 by spyro            ###   ########.fr       */
+/*   Updated: 2022/03/31 14:12:25 by spyro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		{
 			if (needle[j + 1] == '\0')
 				return ((char *)&haystack[i]);
-				j++;
+			j++;
 		}
 		i++;
 	}
