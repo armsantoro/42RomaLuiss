@@ -6,11 +6,13 @@
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:23:37 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/16 11:16:26 by asantoro         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:29:10 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *str, int c, unsigned int n)
+#include "libft.h"
+
+void	*ft_memset(void *str, int c, size_t n)
 {
 	unsigned char	*p_str;
 	unsigned char	p_c;

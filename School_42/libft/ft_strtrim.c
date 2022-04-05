@@ -3,37 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spyro <spyro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 18:09:28 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/29 03:19:50 by spyro            ###   ########.fr       */
+/*   Created: 2022/04/05 14:09:51 by asantoro          #+#    #+#             */
+/*   Updated: 2022/04/05 18:04:30 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_strtrim(const char *s1, char *set)
+static int	check_set(char c, const char *str)
 {
-	int		start;
-	int		end;
-	int		i;
-	char	*strim;
+	while (*str)
+	{
+		if (*str == c)
+			return (1);
+		str++;
+	}
+	return (0);
+}
 
-	start = 0;
-	end = ft_strlen((char *)s1);
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int		x;
+	int		y;
+	int		z;
+	char	*str;
+
 	if (!s1 || !set)
 		return (NULL);
-	while (ft_strchr(set, s1[start]) && s1[start])
-		start++;
-	while (ft_strchr(set, s1[end - 1]) && end > start)
-		end--;
-	strim = malloc(end - start + 1);
-	if (!strim)
+	x = 0;
+	z = 0;
+	while (s1[x] && check_set(s1[x], set))
+		x++;
+	y = ft_strlen(s1);
+	while (y > x && check_set(s1[y - 1], set))
+		y--;
+	str = (char *)malloc(sizeof(char) * (y - x + 1));
+	if (!str)
 		return (NULL);
-	i = 0;
-	while (start < end)
-		strim[i++] = s1[start++];
-	strim[i] = '\0';
-	return (strim);
+	while (x < y)
+		str[z++] = s1[x++];
+	str[z] = '\0';
+	return (str);
 }

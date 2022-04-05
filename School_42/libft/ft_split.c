@@ -3,62 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spyro <spyro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 12:48:02 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/29 03:19:47 by spyro            ###   ########.fr       */
+/*   Created: 2022/04/05 14:08:38 by asantoro          #+#    #+#             */
+/*   Updated: 2022/04/05 18:07:42 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
 
-int	cwd(char *str, char terminator)
+static size_t	word_count(char const *s, char c)
 {
-	int	count;
+	size_t	word_update;
 
-	count = 0;
-	while (*str)
+	word_update = 0;
+	while (*s)
 	{
-		if (*str != terminator)
+		if (*s != c)
 		{
-			++count;
-			while (*str && *str != terminator)
-				++str;
+			++word_update;
+			while (*s && *s != c)
+				++s;
 		}
 		else
-			++str;
+			++s;
 	}
-	return (count);
+	return (word_update);
 }
 
-char	**ft_split(char *string, const char delimiter)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		z;
-	char	**dest;
+	int		j;
+	char	**dst;
 
-	if (!string)
-		return (NULL);
-	dest = (char **)malloc(sizeof(char *) * (cwd(string, delimiter) + 1));
-	if (!dest)
+	if (!s)
 		return (NULL);
 	i = 0;
-	while (*string)
+	dst = malloc((word_count(s, c) + 1) * sizeof(char *));
+	if (!dst)
+		return (NULL);
+	while (*s)
 	{
-		if (*string != delimiter)
+		if (*s != c)
 		{
-			z = 0;
-			while (*string && *string != delimiter && ++z)
-				++string;
-			dest[i++] = ft_substr(string - z, 0, z);
+			j = 0;
+			while (*s && *s != c && ++j)
+				++s;
+			dst[i++] = ft_substr(s - j, 0, j);
 		}
 		else
-			++string;
+			++s;
 	}
-	dest[i] = 0;
-	return (dest);
+	dst[i] = 0;
+	return (dst);
 }

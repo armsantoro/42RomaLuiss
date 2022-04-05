@@ -6,13 +6,15 @@
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:12:59 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/11 12:14:19 by asantoro         ###   ########.fr       */
+/*   Updated: 2022/04/05 17:49:04 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (*str)

@@ -6,7 +6,7 @@
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:08:28 by asantoro          #+#    #+#             */
-/*   Updated: 2022/03/15 15:22:26 by asantoro         ###   ########.fr       */
+/*   Updated: 2022/04/05 17:01:11 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	lendest;
 	size_t	i;
 
-	if ((int)dstsize <= ft_strlen(dst))
+	if ((unsigned int)dstsize <= ft_strlen(dst))
 		return (dstsize + ft_strlen((char *)src));
 	lendest = ft_strlen(dst);
 	i = 0;

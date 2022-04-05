@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spyro <spyro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 21:23:54 by spyro             #+#    #+#             */
-/*   Updated: 2022/03/30 20:07:05 by spyro            ###   ########.fr       */
+/*   Created: 2022/04/05 14:07:04 by asantoro          #+#    #+#             */
+/*   Updated: 2022/04/05 18:05:17 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	lennum(int n, int base)
+static size_t	lennum(int n, int base)
 {
 	size_t	count;
 
