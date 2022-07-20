@@ -6,29 +6,11 @@
 /*   By: asantoro <asantoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:51:40 by evento            #+#    #+#             */
-/*   Updated: 2022/07/18 20:43:44 by asantoro         ###   ########.fr       */
+/*   Updated: 2022/07/20 15:56:47 by asantoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-char	*ft_strchr(char *str, int c)
-{
-	int				i;
-	unsigned char	ch;
-
-	i = 0;
-	ch = c;
-	while (str[i])
-	{
-		if (ch == str[i])
-			return ((char *)&str[i]);
-		i++;
-	}
-	if (str[i] == ch)
-		return ((char *)&str[i]);
-	return (NULL);
-}
 
 size_t	ft_strlen(char *s)
 {
@@ -40,6 +22,24 @@ size_t	ft_strlen(char *s)
 	while (s[i] != '\0')
 		i++;
 	return (i);
+}
+
+char	*ft_strchr(char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	if (c == '\0')
+		return ((char *)&s[ft_strlen(s)]);
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char) c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	return (0);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
@@ -68,30 +68,4 @@ char	*ft_strjoin(char *s1, char *s2)
 	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
 	free(s1);
 	return (str);
-}
-
-char	*ft_new_stash(char *stash)
-{
-	size_t	len;
-	size_t	i;
-	char	*buff;
-
-	len = 0;
-	i = 0;
-	while (stash[i] != '\n' && stash[i] != '\0')
-		i++;
-	if (!stash[i])
-	{
-		free (stash);
-		return (NULL);
-	}
-	buff = (char *) malloc(sizeof(char) * (ft_strlen(stash) - i + 1));
-	if (!buff)
-		return (NULL);
-	i++;
-	while (stash[i] != '\0')
-		buff[len++] = buff[i++];
-	buff[len] = '\0';
-	free(stash);
-	return (buff);
 }
